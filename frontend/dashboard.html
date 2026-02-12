@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script src="js/auth.js"></script>
+<script>
+  authCheck();
+</script>
+
+<div class="sidebar">
+  <h2>💼 Wallet</h2>
+
+  <p class="user">
+    👋 Hi, <span id="username"></span>
+  </p>
+
+  <a class="active" href="dashboard.html">Dashboard</a>
+  <a href="add-income.html">Income</a>
+  <a href="add-expense.html">Expense</a>
+  <a href="view-records.html">Records</a>
+  <button onclick="toggleTheme()">🌓 Theme</button>
+
+  <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+  <h1>Dashboard</h1>
+
+  <div class="cards">
+    <div class="card income">
+      Income
+      <h2 id="income">₹0</h2>
+    </div>
+
+    <div class="card expense">
+      Expense
+      <h2 id="expense">₹0</h2>
+    </div>
+
+    <div class="card balance">
+      Balance
+      <h2 id="balance">₹0</h2>
+    </div>
+  </div>
+<div class="chart-toggle">
+  <button onclick="loadChart('weekly')">Weekly</button>
+  <button onclick="loadChart('monthly')">Monthly</button>
+</div>
+
+  <canvas id="chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  // Show username
+  document.getElementById("username").innerText =
+    localStorage.getItem("username") || "User";
+</script>
+
+<script src="js/dashboard.js"></script>

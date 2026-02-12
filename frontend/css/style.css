@@ -1,0 +1,33 @@
+body {
+  background: #f4f6f9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.navbar {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h5 {
+  font-weight: 600;
+}
+
+.dashboard-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+}
+.dashboard-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+.income { background: #28a745; }
+.expense { background: #dc3545; }
+.weekly { background: #ffc107; color: black; }
+.balance { background: #0d6efd; }
+

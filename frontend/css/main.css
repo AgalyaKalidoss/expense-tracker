@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: #fff;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #141414;
+  padding: 20px;
+}
+
+.logo {
+  color: #9cff00;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: #aaa;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #1f1f1f;
+  color: #9cff00;
+}
+
+.premium {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+}
+
+.premium img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #1f1f1f;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+button {
+  background: #9cff00;
+  color: black;
+  font-weight: bold;
+}
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #ff1a1a;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  display: flex;
+}
+
+.sidebar {
+  width: 230px;
+  background: #111;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  color: #9cff00;
+}
+
+.sidebar a {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #1f1f1f;
+  color: #9cff00;
+}
+
+.logout {
+  margin-top: 30px;
+  background: #ff4d4d;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+}
+body.light {
+  background: #f4f4f4;
+  color: #111;
+}
+
+body.light .sidebar {
+  background: #fff;
+  color: #000;
+}
+
+body.light .card {
+  background: #fff;
+  color: #000;
+}
+body.light .navbar {
+  background: #fff;
+  color: #000;
+}
+/* ===== FORM CARD ===== */
+.card {
+  background: #121212;
+  color: #fff;
+  border-radius: 12px;
+  border: 1px solid #222;
+}
+
+.card h4 {
+  font-weight: 600;
+  color: #9cff00;
+}
+
+.form-control {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.form-control:focus {
+  background: #1e1e1e;
+  color: #fff;
+  border-color: #9cff00;
+  box-shadow: none;
+}
+
+.btn-danger {
+  background: #ff4d4d;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #ff3333;
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #222;
+  color: #9cff00;
+  padding: 12px 18px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}

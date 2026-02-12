@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Income</title>
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/auth.js"></script>
+  <script>
+    authCheck();
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2 class="logo">💼 Wallet</h2>
+
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="add-income.html" class="active">➕ Income</a>
+  <a href="add-expense.html">➖ Expense</a>
+  <a href="view-records.html">📁 Records</a>
+
+  <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="main">
+  <h1>Add Income</h1>
+
+  <div class="card">
+    <input id="source" placeholder="Income Source">
+    <input id="amount" type="number" placeholder="Amount">
+    <input id="date" type="date">
+
+    <button onclick="addIncome()">Add Income</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/income.js"></script>
+
+</body>
+</html>

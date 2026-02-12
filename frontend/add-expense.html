@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Expense</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/auth.js"></script>
+  <script>
+    authCheck();
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2 class="logo">💼 Wallet</h2>
+
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="add-income.html">➕ Income</a>
+  <a href="add-expense.html" class="active">➖ Expense</a>
+  <a href="view-records.html">📁 Records</a>
+
+  <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="container mt-5 col-md-4">
+  <div class="card p-4 shadow">
+    <h4 class="text-center mb-3">Add Expense</h4>
+
+    <input id="title" class="form-control mb-3" placeholder="Expense Name">
+    <input id="amount" type="number" class="form-control mb-3" placeholder="Amount">
+    <input id="date" type="date" class="form-control mb-3">
+
+    <button class="btn btn-danger w-100" onclick="addExpense()">Add Expense</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/expense.js"></script>
+
+</body>
+</html>

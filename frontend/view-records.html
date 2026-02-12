@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Records</title>
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/auth.js"></script>
+  <script>
+    authCheck();
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>💼 Wallet</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="add-income.html">Income</a>
+  <a href="add-expense.html">Expense</a>
+  <a class="active">Records</a>
+
+  <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+  <h1>Expense Records</h1>
+
+  <div class="filter">
+    <input type="date" id="from">
+    <input type="date" id="to">
+    <button onclick="loadRecords()">Filter</button>
+    <button onclick="loadRecords()">Reset</button>
+  </div>
+  <h3 id="summary">Total Expense: ₹0</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Action</th>
+
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+
+<!-- ✅ REQUIRED -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+function loadRecords() {
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+
+  let url = "http://localhost:3000/expense";
+  if (from && to) {
+    url += `?from=${from}&to=${to}`;
+  }
+
+  axios.get(url, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token")
+    }
+  })
+  .then(res => {
+    const rows = document.getElementById("rows");
+    const summary = document.getElementById("summary");
+
+    rows.innerHTML = "";
+    let total = 0;
+
+    if (res.data.length === 0) {
+      rows.innerHTML = `<tr><td colspan="4">No records found</td></tr>`;
+      summary.innerText = "Total Expense: ₹0";
+      return;
+    }
+
+    res.data.forEach(e => {
+      total += e.amount;
+
+      rows.innerHTML += `
+        <tr>
+          <td>${e.title}</td>
+          <td>₹${e.amount}</td>
+          <td>${e.date}</td>
+          <td>
+            <button onclick="delExpense('${e._id}')">🗑️</button>
+          </td>
+        </tr>
+      `;
+    });
+
+    summary.innerText = "Total Expense: ₹" + total;
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Failed to load records");
+  });
+}
+
+// DELETE EXPENSE
+function delExpense(id) {
+  if (!confirm("Delete this expense?")) return;
+
+  axios.delete(`http://localhost:3000/expense/${id}`, {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token")
+    }
+  }).then(() => {
+    loadRecords();
+  });
+}
+
+// Load records on page open
+loadRecords();
+</script>
+
+
+</body>
+</html>
