@@ -1,50 +1,89 @@
-💼 Expense Tracker Web Application
+````markdown
+# 💼 Expense Tracker Web Application
 
-A secure, full-stack expense tracking web application that allows users to manage income and expenses with real-time insights, interactive charts, and date-based filtering. Built with modern web technologies and JWT-based authentication.
+A secure full-stack web application to manage income and expenses with user authentication and basic analytics.
 
-🚀 Features
+---
 
-🔐 User Authentication (Register / Login / Logout)
+## Backend Setup
 
-👥 Multi-user expense isolation
+### 1. Go to backend folder
+```bash
+cd backend
+````
 
-➕ Add Income & Expenses
+### 2. Clean dependencies
 
-📊 Interactive Dashboard with weekly/monthly charts
+```bash
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+```
 
-📁 View, filter & delete expense records (date range)
+### 3. Install packages
 
-💰 Automatic balance calculation
+```bash
+npm install
+npm install express cors body-parser
+```
 
-🌙 Dark-themed professional UI
+### 4. Run server
 
-🔔 Toast notifications (no alerts)
+```bash
+node server.js
+```
 
-📱 Responsive design with Bootstrap
+or
 
-🛠️ Tech Stack
+```bash
+npm start
+```
 
-Frontend
+### Output
 
-HTML5, CSS3 (Custom + Bootstrap)
+Server running on port 3000
 
-JavaScript (Axios, Chart.js)
+---
 
-Backend
+## Project Overview
 
-Node.js
+Expense Tracker is a full-stack application that allows users to track income and expenses, view balances, and analyze spending through a dashboard.
 
-Express.js
+---
 
-JWT Authentication
+## Features
 
-bcrypt (Password Hashing)
+* User registration and login
+* Add income and expenses
+* View and delete records
+* Date-based filtering
+* Dashboard with charts
+* Balance calculation
+* Responsive UI
 
-Database
+---
 
-MongoDB (users, income, expenses collections)
+## Tech Stack
 
-📂 Folder Structure
+Frontend:
+
+* HTML, CSS, Bootstrap
+* JavaScript, Axios, Chart.js
+
+Backend:
+
+* Node.js, Express.js
+* JWT authentication
+* bcrypt
+
+Database:
+
+* MongoDB
+
+---
+
+## Folder Structure
+
+```
 expense-tracker/
 │
 ├── backend/
@@ -52,77 +91,60 @@ expense-tracker/
 │   └── package.json
 │
 ├── frontend/
-│   ├── css/
-│   ├── js/
 │   ├── dashboard.html
 │   ├── login.html
 │   ├── register.html
 │   └── view-records.html
 │
 └── README.md
+```
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
+---
+
+## Installation
+
+```bash
 git clone https://github.com/your-username/expense-tracker.git
 cd expense-tracker
 
-2️⃣ Install Backend Dependencies
 cd backend
 npm install
 
-3️⃣ Start MongoDB
-
-Make sure MongoDB is running locally:
-
 mongod
 
-4️⃣ Run the Server
 node server.js
+```
 
-5️⃣ Open Frontend
+Open `login.html` in browser.
 
-Open login.html in your browser.
+---
 
-🔑 API Endpoints
-Method	Endpoint	Description
-POST	/register	User registration
-POST	/login	User login
-POST	/income	Add income
-POST	/expense	Add expense
-GET	/expense	Get expenses (with filter)
-DELETE	/expense/:id	Delete expense
-GET	/dashboard	Dashboard summary
-📈 Dashboard Overview
+## API Endpoints
 
-Total Income
+| Method | Endpoint     | Description    |
+| ------ | ------------ | -------------- |
+| POST   | /register    | Register user  |
+| POST   | /login       | Login user     |
+| POST   | /income      | Add income     |
+| POST   | /expense     | Add expense    |
+| GET    | /expense     | Get expenses   |
+| DELETE | /expense/:id | Delete expense |
+| GET    | /dashboard   | Dashboard data |
 
-Total Expenses
+---
 
-Remaining Balance
+## Security
 
-Weekly / Monthly expense visualization
+* Password hashing with bcrypt
+* JWT authentication
+* Protected routes
 
-Real-time UI updates
+---
 
-🔐 Security
-
-Passwords hashed using bcrypt
-
-Secure API access using JWT
-
-User-specific data isolation
-
-📌 Future Enhancements
-
-Export reports (PDF / Excel)
-
-Category-wise expense analysis
-
-Email notifications
-
-Cloud deployment
-
-👤 Author
+## Author
 
 Agalya Kalidoss
-Full Stack Developer | Node.js | MongoDB | JavaScript
+Full Stack Developer
+
+```
+```
