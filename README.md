@@ -145,6 +145,3 @@ Open `login.html` in browser.
 
 Agalya Kalidoss
 Full Stack Developer
-
-```
-```
